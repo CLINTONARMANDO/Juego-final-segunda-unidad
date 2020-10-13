@@ -1,0 +1,441 @@
+#include<iostream>
+#include<stdlib.h>
+#include<math.h>
+
+using namespace std;
+
+int main(){
+	int v1;
+	v1=1;
+	while(v1<10){
+		int v2=1;
+		int n,scr=0;
+			char nombre[50];
+			cout<<"MINIGAMES"<<endl<<endl;
+			cout<<"Inrodusca su nombre(maximo 30 caracteres): ";
+			cin.getline(nombre,30);
+			cout<<endl;
+		while(v2<10){
+			cout<<"MINIGAMES"<<endl<<endl;
+			cout<<"Bienvenido "<<nombre<<endl<<endl;
+			cout<<"Su puntuacion es: "<<scr<<endl;
+			cout<<"Elija el juego que desee jugar "<<endl;
+			cout<<"Adivinando codigos = 1"<<endl;
+			cout<<"El adivinador = 2"<<endl;
+   			cout<<"Piedra papel o tigera = 3"<<endl;
+			cout<<"Quest = 4"<<endl;
+			cout<<"Reglas = 6"<<endl;
+			cout<<"Ajustes = 7"<<endl;
+			cout<<"Salir del juego = 8"<<endl;
+			cout<<"Deseo jugar el juego numero: ";cin>>n;
+			cout<<endl<<endl;
+			if(n<=8){
+				if(n>=1){
+					if(n==1){
+						int a1=0,b1=0,c1=0,d1=0,i1=10,f1=1,w1=0,x1=0,y1=0,z1=0;
+						cout<<"Adivinando codigos"<<endl;
+						cout<<"Tienes 10 intentos para adivinar un grupo de 4 numeros aleatrorios entre 1 y 20"<<endl;
+						cout<<"Mientras menos intentos pierdas mas puntaje ganaras"<<endl;
+						cout<<"****"<<endl;
+						a1=(rand()%20)+1;
+						b1=(rand()%20)+1;
+						c1=(rand()%20)+1;
+						d1=(rand()%20)+1;
+						while(f1<10){
+							int n1=0,m1=0;
+							cout<<"Inserte el primer numero: ";cin>>w1;
+							cout<<"Inserte el segunto numero: ";cin>>x1;
+							cout<<"Inserte el tercer numero: ";cin>>y1;
+							cout<<"Inserte el cuarto numero: ";cin>>z1;
+							i1--;
+							if(a1==x1 || a1==w1 || a1==y1 || a1==z1){
+								n1++;
+							}
+							if(b1==x1 || b1==w1 || b1==y1 || b1==z1){
+								n1++;
+							}
+							if(c1==x1 || c1==w1 || c1==y1 || c1==z1){
+								n1++;
+							}
+							if(d1==x1 || d1==w1 || d1==y1 || d1==z1){
+								n1++;
+							}
+							
+							if(a1==w1){
+								m1++;
+							}
+							
+							if(b1==x1){
+								m1++;
+							}
+							
+							if(c1==y1){
+								m1++;
+							}
+							
+							if(d1==z1){
+								m1++;
+							}
+							if(i1==0){
+								cout<<"Perdiste"<<endl<<endl;
+								f1=10;
+								
+							}
+							cout<<"Numeros correctos pero en posiciones equivocadas"<<n1<<endl<<endl;
+							cout<<"Numeros correctos en posicion"<<m1<<endl<<endl;
+							if(a1==w1 && b1==x1 && c1==y1 && d1==z1){
+								scr=(i1+1)*10;
+								f1=10;
+							}
+						}
+					
+					}
+					if(n==2){
+							int n2,v2,w2;
+						int a2=5;
+						cout<<"El Adivinador"<<endl;
+						cout<<"Tienes 5 intentos para adivinar un numero del 1 al 15"<<endl;
+						cout<<"Mientras menos intentos pierdas mas puntaje ganaras"<<endl;
+						v2=1+rand()%(15);
+						while(w2<10){
+							
+							cout<<"Ingrese el numero correcto: "<<endl;
+							cin>>n2;
+							if(n2==v2){
+								cout<<"Felicidades ganaste"<<endl;
+								cout<<"	Gastaste "<<5-a2<<" intentos"<<endl<<endl;
+								w2=10;
+							}
+							if(n2<v2){
+								cout<<"El numero que elegiste es menor, intentalo de nuevo";
+								a2--;
+							}
+							if(n2>v2){
+								cout<<"El numero que elegiste es mayor, intentalo de nuevo";
+								a2--;
+							}
+							if(a2==0){
+								w2=10;
+							}
+						}
+						
+						scr=scr+a2*10;
+						
+					}
+					if(n==3){
+						int p3,n3=1;
+						int scr3=0;
+						cout<<"PIEDRA PAPEL O TIJERA"<<endl<<endl;
+	   					cout<<"REGLAS"<<endl;
+   						cout<<"Piedra = 1"<<endl;
+	   					cout<<"Papel = 2"<<endl;
+						cout<<"Tijera = 3"<<endl;
+						cout<<"Ingrese solo numeros"<<endl;
+						cout<<"Tienes 5 intentos"<<endl;
+						cout<<"Mientras mas veces ganes mayor sera el puntaje obtenido"<<endl<<endl;
+						p3=5;
+						while(n3<10){
+							int a3, b3;
+							b3=(rand()%3)+1;
+		
+							cout<<"Piedra papel o tijera: ";cin>> a3;
+							cout<<endl<<endl;
+							if(a3==1){
+								cout<<"JUGADOR:PIEDRA"<<endl;
+								p3--;
+							}
+							if(a3==2){
+								cout<<"JUGADOR:PAPEL"<<endl;
+								p3--;
+							}
+							if(a3==3){
+								cout<<"JUGADOR:TIJERA"<<endl;
+								p3--;
+							}
+							if(a3>3){
+								cout<<"ERROR"<<endl;
+								cout<<"El numero no es valido"<<endl<<endl;
+								b3=0;
+							}
+							if(a3<1){
+								cout<<"ERROR"<<endl;
+								cout<<"El numero no es valido"<<endl<<endl;
+								b3=0;
+								}
+
+							
+	
+							if(b3==1){
+								cout<<"COMPUTADORA:PIEDRA"<<endl<<endl;
+							}
+							if(b3==2){
+								cout<<"COMPUTADORA:PAPEL"<<endl<<endl;
+							}
+							if(b3==3){
+								cout<<"COMPUTADORA:TIJERA"<<endl<<endl;
+							}
+
+							if(a3==b3){
+								cout<<"EMPATE"<<endl;
+							}
+							if((a3==1&&b3==3) || (a3==2&&b3==1) || (a3==3&&b3==2)){
+								cout<<"GANASTE"<<endl;
+								scr3++;
+							}
+							if((a3==1&&b3==2) || (a3==2&&b3==3) || (a3==3&&b3==1)){
+								cout<<"PERDISTE"<<endl;
+							}
+								cout<<"Puntaje: "<<scr3<<endl<<endl;
+							if(p3==0){
+								scr=scr+scr3*10;
+								
+								n3=10;
+							}
+						}
+
+					}
+					if(n==4){
+						int a5,b5,c5,d5,e5,f5,g5,h5,i5,j5,k5,l5,m5,n5,o5,x5=0;
+						cout<<"\nQUEST"<<endl;
+						cout<<"\nREGLAS";
+						cout<<"Responda las preguntas de cultura general"<<endl;
+   						cout<<"Tienes n preguntas que responder"<<endl;
+						cout<<"Ganas si logras responder mas de la mitad de las 15 preguntas"<<endl;
+						cout<<"\nPREGUNTA 1"<<endl;
+						cout<<"\n¿Cuales son los cinco tipos de sabores primarios?"<<endl;
+						cout<<"\n1. Dulce, amargo, acido, salado y umami";
+						cout<<"\n2. Dulce, agrio, salado, neutro, umami";
+						cout<<"\n3. Dulce, verde, acido, salado y agrio";
+						cout<<"\nLa alternativa correcta es: ";cin>> a5;
+		
+						cout<<"\nPREGUNTA 2"<<endl;
+						cout<<"\n¿Cual es el lugar mas frio de la tierra?"<<endl;
+						cout<<"\n1. La Antartida";
+						cout<<"\n2. Asia";
+						cout<<"\n3. El everest";
+						cout<<"\nLa alternativa correcta es: ";cin>> b5;
+		
+						cout<<"\nPREGUNTA 3"<<endl;
+						cout<<"\n¿Cual es el rio mas largo del mundo?"<<endl;
+						cout<<"\n1. El nilo";
+						cout<<"\n2. El amazonas";
+						cout<<"\n3. Eufrates";
+						cout<<"\nLa alternativa correcta es: ";cin>> c5;
+		
+						cout<<"\nPREGUNTA 4"<<endl;
+						cout<<"\n¿Quien escribio La Odisea?"<<endl;
+						cout<<"\n1. Sofocles";
+						cout<<"\n2. Homero";
+						cout<<"\n3. Socrates";
+						cout<<"\nLa alternativa correcta es: ";cin>> d5;
+		
+						cout<<"\nPREGUNTA 5"<<endl;
+						cout<<"\n4. ¿Como se llama la capital de Mongolia?"<<endl;
+						cout<<"\n1. Paris";
+						cout<<"\n2. Ulan Bator";
+						cout<<"\n3. Mongoia";
+						cout<<"\nLa alternativa correcta es: ";cin>> e5;
+		
+						cout<<"\nPREGUNTA 6"<<endl;
+						cout<<"\n¿En qué continente esta Ecuador?"<<endl;
+						cout<<"\n1. America del sur";
+						cout<<"\n2. America del norte";
+						cout<<"\n3. Asia";
+						cout<<"\nLa alternativa correcta es: ";cin>> f5;
+		
+						cout<<"\nPREGUNTA 7"<<endl;
+						cout<<"\n¿Como se llama la Reina del Reino Unido?"<<endl;
+						cout<<"\n1. Isabel II";
+						cout<<"\n2. Sofia";
+						cout<<"\n3. Isabel III";
+						cout<<"\nLa alternativa correcta es: ";cin>> g5;
+
+						cout<<"\nPREGUNTA 8"<<endl;
+						cout<<"\n¿Qué tipo de animal es la ballena?"<<endl;
+						cout<<"\n1. Mamifero";
+						cout<<"\n2. Reptil";
+						cout<<"\n3. Ave";
+						cout<<"\nLa alternativa correcta es: ";cin>> h5;
+		
+						cout<<"\nPREGUNTA 9"<<endl;
+						cout<<"\n¿Donde originaron los juegos olimpicos?"<<endl;
+						cout<<"\n1. Roma";
+						cout<<"\n2. Mexico";
+						cout<<"\n3. Grecia";
+						cout<<"\nLa alternativa correcta es: ";cin>> i5;
+		
+						cout<<"\nPREGUNTA 10"<<endl;
+						cout<<"\n¿Quien es el autor de el Quijote?"<<endl;
+						cout<<"\n1. Miguel de Cervantes Sabedra";
+						cout<<"\n2. Cesar vallejo";
+						cout<<"\n3. Pablo Neruda";
+						cout<<"\nLa alternativa correcta es: ";cin>> j5;
+		
+						cout<<"\nPREGUNTA 11"<<endl;
+						cout<<"\n¿De que colores es la bandera de Mexico?"<<endl;
+						cout<<"\n1. Verde, blanco y rojo";
+						cout<<"\n2. Verde, amarillo y rojo";
+						cout<<"\n3. Verde, amarillo y azul";
+						cout<<"\nLa alternativa correcta es: ";cin>> k5;
+		
+						cout<<"\nPREGUNTA 12"<<endl;
+						cout<<"\n¿Quien pinto ?la ultima cena??"<<endl;
+						cout<<"\n1. Leonardo Davinci";
+						cout<<"\n2. Frida Calo";
+						cout<<"\n3. Mario Vargas Llosa";
+						cout<<"\nLa alternativa correcta es: ";cin>> l5;
+		
+						cout<<"\nPREGUNTA 13"<<endl;
+						cout<<"\n¿En que pais se encuentra la torre de Pisa?"<<endl;
+						cout<<"\n1. Italia";
+						cout<<"\n2. Francia";
+						cout<<"\n3. Inglaterra";
+						cout<<"\nLa alternativa correcta es: ";cin>> m5;
+		
+						cout<<"\nPREGUNTA 14"<<endl;
+						cout<<"\n¿Cuando acabo la II Guerra Mundial?"<<endl;
+						cout<<"\n1. En 1925";
+						cout<<"\n2. En 1935";
+						cout<<"\n3. En 1945";
+						cout<<"\nLa alternativa correcta es: ";cin>> n5;
+		
+						if(a5==1){
+						x5++;	
+						}
+						if(b5==1){
+						x5++;	
+						}
+						if(c5==2){
+						x5++;	
+						}
+						if(d5==2){
+						x5++;	
+						}
+						if(e5==2){
+						x5++;	
+						}
+						if(f5==1){
+						x5++;	
+						}
+						if(g5==1){
+						x5++;	
+						}
+						if(h5==1){
+						x5++;	
+						}
+						if(i5==3){
+						x5++;	
+						}
+						if(j5==1){
+						x5++;	
+						}
+						if(k5==1){
+						x5++;	
+						}
+						if(l5==1){
+						x5++;	
+						}
+						if(m5==1){
+						x5++;	
+						}
+						if(n5==3){
+						x5++;	
+						}
+						if(x5<8){
+							cout<<"Perdiste"<<endl;
+						}
+						else{
+							cout<<"Ganaste"<<endl;
+						}
+						cout<<"\nCantidad de preguntas respondidas correctamente: "<<x5<<endl;
+						cout<<"\nCantidad de preguntas respondidas erroneamente: "<<14-x5<<endl;
+						cout<<"\nPuntaje total obtenido: "<<x5*10<<endl<<endl;
+						scr=scr+x5*10;
+						
+					}
+					if(n==6){
+						cout<<"REGLAS"<<endl<<endl;
+						cout<<"GENERAL"<<endl;
+						cout<<"Cada juego te otorgara puntos dependiendo de cuantas veces ganes"<<endl;
+						cout<<"Por cada intento que sobre se le añadira 10 puntos"<<endl;
+						cout<<"Cada vez que pierda perdera un intento"<<endl<<endl;
+						cout<<"ADIVINANDO CODIGOS"<<endl;
+						cout<<"Tienes 5 intentos para adivinar un numero del 1 al 15"<<endl;
+						cout<<"Por cada intento que sobre se le añadira 10 puntos"<<endl;
+						cout<<"Cada vez que pierda perdera un intento"<<endl<<endl;
+						cout<<"EL ADIVINADOR"<<endl;
+						cout<<"Tienes 5 intentos para adivinar un numero del 1 al 15"<<endl;
+						cout<<"Por cada intento que sobre se le añadira 10 puntos"<<endl;
+						cout<<"Cada vez que pierda perdera un intento"<<endl<<endl;
+   						cout<<"PIEDRA PAPEL O TIJERA"<<endl;
+   						cout<<"Los objetos: piedra, papel o tiejera seran representados con numeros"<<endl;
+   						cout<<"Piedra = 1; Papel = 2; Tijera = 3"<<endl;
+   						cout<<"El papel le gana a la piedra, la piedra le gana a la tijera, la tijera la gana al papel"<<endl;
+   						cout<<"Tienes cinco intentos"<<endl;
+   						cout<<"Por cada vez que ganes de los 5 intentos se te añadiran 10 puntos"<<endl<<endl;
+						cout<<"AHORCADO"<<endl;
+						cout<<""<<endl;
+						cout<<""<<endl;
+						cout<<""<<endl;
+						cout<<""<<endl<<endl;
+						cout<<"QUEST"<<endl;
+						cout<<"Debes responder correctamente a las 15 preguntas"<<endl;
+						cout<<"Por cada pregunta bien respondida se te añadiran 10 puntos"<<endl;
+						cout<<"Si no obtienes ninguna respuesta correcta obtendras 0 puntos"<<endl;
+						cout<<"Si respondes todas las preguntas correctamente obtendras 150 puntos"<<endl<<endl;
+					}
+					if(n==7){
+						int p7=1;
+						while(p7<10){
+							int n7;
+							cout<<"AJUSTES"<<endl<<endl;
+							cout<<"Reiniciar los puntajes = 1"<<endl;
+							cout<<"Acerca de = 2"<<endl;
+							cout<<"Contactarse con el creador = 3"<<endl;
+							cout<<"Salir al menu principal = 4"<<endl;
+							cout<<"Elija la opcion que desee: ";cin>>n7;
+							cout<<endl<<endl;
+							if(n7<1){
+								cout<<"Elija la opcion correcta"<<endl<<endl;
+							}
+							if(n7>4){
+								cout<<"Elija la opcion correcta"<<endl<<endl;
+							}
+							if(n7==1){
+								scr=0;
+								cout<<"Los puntajes se reiniciaron correctamente"<<endl<<endl;
+							}
+							if(n7==2){
+								cout<<"Este juego fue creado por Clinton Armando Arias Chipana"<<endl<<endl;
+							}
+							if(n7==3){
+								cout<<"Whatsapp = 900968497"<<endl;
+								cout<<"Telefono = 943728194"<<endl;
+								cout<<"Correo primario = Clintonarmando25@gmail.com"<<endl;
+								cout<<"Correo secundario = Clintonarmando@hotmail.com"<<endl;
+								cout<<"Ahora dame mi titulo :V"<<endl<<endl;
+							}
+							if(n7==4){
+								p7=10;
+							}
+						}
+					}
+					if(n==8){
+						
+						return 0;
+					}
+				
+				}
+				else{
+				cout<<"Eligio una opcion incorrecta"<<endl<<endl;
+				}
+			}
+			else{
+		
+			cout<<"Eligio una opcion incorrecta"<<endl<<endl;
+			}
+		
+		}
+	}
+	return 0;
+}
